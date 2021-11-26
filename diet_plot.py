@@ -1,6 +1,7 @@
 import streamlit as st
 import altair as alt
 import pandas as pd
+from vega_datasets import data
 
 st.header("Diet & Sea Ice")
 st.subheader("Sea Ice Area vs. Year")
@@ -124,4 +125,40 @@ Usage:
 - Brush over boxplot area to see one or multiple years being selected, and the scatter plot is updated (filtered) accordingly.
 - Drag the selected area left and right to see change over year.
 - Hover over boxplot to see mean value of each year.
+""")
+
+st.subheader("Size of krill (in diet composition) over year")
+
+def krill_size():
+    # transform data
+    krill = pd.read_csv("EDA/krill_info.csv")
+    krill = krill.drop(["Sample Number", "Total Number", "month", "Date", "index"], axis=1)
+    plot_data = krill.melt(id_vars=["year"],
+                         var_name="size category",
+                         value_name="count")
+    plot_data = plot_data[plot_data["size category"] != "61-65mm"]
+    selection = alt.selection_multi(fields=['size category'], bind='legend')
+    highlight = alt.selection_multi(on='mouseover',
+                                    fields=['size category'], nearest=True, bind='legend')
+
+    chart = alt.Chart(plot_data).mark_area().encode(
+        alt.X('year:O', axis=alt.Axis(labelAngle=0)),
+        alt.Y('sum(count):Q', stack='center'),
+        alt.Color('size category:N', scale=alt.Scale(scheme='tableau10')),
+        opacity=alt.condition(highlight, alt.value(1), alt.value(0.2))
+    ).add_selection(
+        highlight
+    ).properties(
+        width=1000,
+        height=450
+    ).configure_axis(
+        titleFontSize=15
+    ).interactive()
+
+    st.altair_chart(chart)
+
+krill_size()
+st.markdown("""
+Usage:
+- Select category in legend to highlight particular area
 """)
