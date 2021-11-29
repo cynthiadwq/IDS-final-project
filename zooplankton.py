@@ -43,8 +43,9 @@ def load_and_clean_zooplankton_data():
   # Limacina: sea snail babies, on penguin diet: https://en.wikipedia.org/wiki/Sea_butterfly
   # E crystallorophias: antarctic costal krill: https://en.wikipedia.org/wiki/Euphausia_crystallorophias
   # Thysanoessa, a genre of krill: https://en.wikipedia.org/wiki/Thysanoessa
-  # Since `Krill`, `E crystallorophias` and `Thysanoessa` are all under the umbrella of krill,
-  # we can just group krill together. And create a Krill and other separation
+  # `Krill`, `E crystallorophias` and `Thysanoessa` are all under the umbrella of krill,
+  # `Salp`: salp can be an important diet source for penguins, 
+  # this research found diet samples consisting of almost 1/3 of total consumption:https://www.scimex.org/newsfeed/learning-about-penguins-diet-may-save-marine-life,-study-finds2
   z_df['All Krills'] = z_df['Krill'] + z_df['Thy'] +  z_df['Ecrystallorophias']
   z_df['All Other'] = z_df['Salp'] + z_df['Limacina']
 
@@ -90,7 +91,7 @@ def indiv_zooplankton():
   )
 
   base = alt.Chart(indiv_per_year).mark_bar().encode(
-    x=alt.X('Category:O', axis=alt.Axis(labelAngle=90)),
+    x=alt.X('Category:O', axis=alt.Axis(labelAngle=45)),
     y=alt.Y('sum(Amount):Q', axis=alt.Axis(title="Zooplankton Abundance (num/1000m³)")), 
   )  
   bars = base.encode(
@@ -113,7 +114,7 @@ def total_zooplankton():
   (_, counts_per_year) = load_and_clean_zooplankton_data()
   total_zooplankton = counts_per_year[['Year', 'Total Food']]
   base = alt.Chart(total_zooplankton).mark_bar().encode(
-    x=alt.X('Year:O', axis=alt.Axis(labelAngle=90)),
+    x=alt.X('Year:O', axis=alt.Axis(labelAngle=0)),
     y=alt.Y('Total Food:Q', axis=alt.Axis(title="Total Zooplankton Abundance (num/1000m³)")), 
   )
   bar = base.encode(
