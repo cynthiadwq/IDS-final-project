@@ -132,7 +132,7 @@ def percentage_2():
   base = alt.Chart(source).encode(
     x=alt.X('Year:O', axis=alt.Axis(labelAngle=90)),
     y=alt.Y('Total Population Percentage:Q', axis=alt.Axis(title="Total Population Percentage")),
-    color=alt.Color('Island', scale=alt.Scale(scheme='tableau20')),
+    color=alt.Color('Island', scale=alt.Scale(scheme='tableau10')),
     tooltip='Island'
   )
 
