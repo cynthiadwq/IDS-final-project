@@ -96,42 +96,42 @@ st.set_page_config(layout="wide")
 
 ##### First Row #####
 row1_1, row1_2= st.columns((4, 1))
+def load_sites_map():
+  sites_df = load_and_clean_sites_data()
 
-sites_df = load_and_clean_sites_data()
+  map_source = alt.topo_feature(
+    'https://raw.githubusercontent.com/jazlyn5/hosting_data/master/ata_map.topojson',
+    'collection'
+  )
 
+  base = alt.Chart(map_source).mark_geoshape(
+      fill='lightgray',
+      stroke='white'
+    )# .project(type='transverseMercator')
+
+  points = alt.Chart(sites_df).mark_circle(
+  ).encode(
+      longitude='Longitude:Q',
+      latitude='Latitude:Q',
+      size=alt.value(80),
+      tooltip='site name',
+      # color=alt.condition(brush, 'Count:N', alt.value('lightgray'))
+  ).project(
+      type="transverseMercator",
+  ).properties(
+      width=800,
+      height=600
+  )
+  st.altair_chart(base + points, use_container_width=True)
+
+load_sites_map()
+
+# zooming in
 map_source = alt.topo_feature(
   'https://raw.githubusercontent.com/jazlyn5/hosting_data/master/ata_map.topojson',
   'collection'
 )
-source = alt.topo_feature(data.world_110m.url, 'countries')
-
-url_geojson = 'https://github.com/cynthiadwq/IDS-final-project/blob/fcc28cefb8487b8d4ea8c2ba635be8a96f259fca/ATA.geo.json'
-data_geojson_remote = alt.Data(url=url_geojson, format=alt.DataFormat(property='features',type='json'))
-
-base = alt.Chart(map_source).mark_geoshape(
-    fill='lightgray',
-    stroke='white'
-  )# .project(type='transverseMercator')
-
-brush = alt.selection_interval()
-
-points = alt.Chart(sites_df).mark_circle(
-).encode(
-    longitude='Longitude:Q',
-    latitude='Latitude:Q',
-    size=alt.value(80),
-    tooltip='site name',
-    # color=alt.condition(brush, 'Count:N', alt.value('lightgray'))
-).project(
-    type="transverseMercator",
-).properties(
-    width=800,
-    height=600
-)
-
-st.altair_chart(base + points)
-
-# zooming in
+sites_df = load_and_clean_sites_data()
 base = alt.Chart(map_source).mark_geoshape(
     fill='lightgray',
     stroke='white'
