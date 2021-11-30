@@ -148,7 +148,7 @@ def overview():
     <br>
     The Adélie penguin is known to feed mainly on: Antarctic krill, ice krill, Antarctic silverfish, 
     sea krill and glacial squid (diet varies depending on geographic location) during the chick-rearing season. 
-    There has been studies that show that salp can also take up to 1/3 of portion of an Adélie penguin's diet.
+    There have been studies that show that salp can also take up to 1/3 of an Adélie penguin's diet at times.
     </p>
     """
     # salp reference: https://www.scimex.org/newsfeed/learning-about-penguins-diet-may-save-marine-life,-study-finds2
