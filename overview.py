@@ -74,7 +74,13 @@ def overview():
 
   row1_1, row1_2 = st.columns((2, 1))
   with row1_1:
-    st.markdown("### Introduction")
+    intro = """
+    <b style="font-family:Charter; color:Black; font-size: 40px;">
+    Introduction
+    </b>
+    <br><br>
+    """
+    st.markdown(intro, unsafe_allow_html=True)
     description = """
       <body style="font-family:Charter; color:Black; font-size: 18px;">
       Adélie penguin is a species of penguins characterized by black and white 

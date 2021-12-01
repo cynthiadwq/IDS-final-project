@@ -3,7 +3,13 @@ from diet_plot import sea_ice, seaIce_population, superba, total_zooplankton, kr
 
 def root():
     # transition:
-    st.header("Environmental/Ecosystem Factors")
+    header = """
+    <b style="font-family:Charter; color:Black; font-size: 40px;">
+    Environmental/Ecosystem Factors
+    </b>
+    """
+    st.markdown(header, unsafe_allow_html=True)
+
     d = """
     <body style="font-family:Charter; color:Black; font-size: 18px;">
     <p>
@@ -32,7 +38,12 @@ def root():
         d, unsafe_allow_html=True
     )
     # sea ice plot
-    st.subheader("Sea Ice")
+    sea_ice_header = """
+    <b style="font-family:Charter; color:Black; font-size: 30px;">
+    Sea Ice
+    </b>
+    """
+    st.markdown(sea_ice_header, unsafe_allow_html=True)
     plot, info = st.columns((8, 2))
     with info:
         st.info("""
@@ -87,7 +98,12 @@ def root():
         d, unsafe_allow_html=True
     )
     # zooplankton + diet plot
-    st.subheader("Diet")
+    diet_header = """
+    <b style="font-family:Charter; color:Black; font-size: 30px;">
+    Diet
+    </b>
+    """
+    st.markdown(diet_header, unsafe_allow_html=True)
     d = """
     <body style="font-family:Charter; color:Black; font-size: 18px;">
     <p>
