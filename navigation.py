@@ -3,6 +3,7 @@ import streamlit as st
 
 from overview import overview
 from dataset import four_cs, dataset_description
+from environment_narrative import root
 
 
 def _max_width(amount=2000):
@@ -37,6 +38,10 @@ elif navigation() == "dataset":
   _max_width(1200)
   four_cs()
   dataset_description()
+
+elif navigation() == "environment/ecosystem":
+  _max_width(1200)
+  root()
 
 elif navigation() == "results":
   st.title('Results List')
