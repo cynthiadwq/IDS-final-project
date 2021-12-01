@@ -4,7 +4,7 @@ import streamlit as st
 from PIL import Image
 
 # SETTING PAGE CONFIG TO WIDE MODE
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 ########## main program ##########
 def _max_width():
@@ -19,7 +19,7 @@ def _max_width():
   """,
       unsafe_allow_html=True,
   )
-_max_width()
+# _max_width()
 
 def four_cs():
   title = """
@@ -77,7 +77,7 @@ def four_cs():
   st.markdown(
     d1, unsafe_allow_html=True
   )
-four_cs()
+# four_cs()
 
 def dataset_description():
   title = """
@@ -241,6 +241,6 @@ def dataset_description():
     st.image(sample_map_img, "Annual Zooplankton Sample Collection Sites")
 
 
-dataset_description()
+# dataset_description()
 
 

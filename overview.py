@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as np
 
 # SETTING PAGE CONFIG TO WIDE MODE
-st.set_page_config(layout="wide")
+# st.set_page_config(layout="wide")
 
 ########## map related methods #########
 @st.cache(persist=True)
@@ -171,6 +171,4 @@ def overview():
     cropped_img = salp.crop(cropped_area)
     st.image(cropped_img, "Salp")
 
-
-overview()
-
+# overview()
