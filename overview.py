@@ -71,7 +71,13 @@ def overview():
   cropped_area = (0, 200, width, height - 250)
   cropped_img = ice_float_image.crop(cropped_area)
   st.image(cropped_img, "Adelie penguins congregating on an ice floe")
-
+  website_title = """
+    <b style="font-family:Noe Display; color:Black; font-size: 60px;">
+    Adélie Penguins on the Coast of West Antarctica
+    </b>
+    <br><br><br>
+  """
+  st.markdown(website_title, unsafe_allow_html=True)
   row1_1, row1_2 = st.columns((2, 1))
   with row1_1:
     intro = """

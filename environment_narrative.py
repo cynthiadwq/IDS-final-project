@@ -15,12 +15,17 @@ def root():
     <p>
     We have observed that there is a major population growth rate change of Adélie penguin. 
     Research area has proposed two hypothesis which might explain this change. 
-
-    - One of them suggests that population change can be explained by the changes in regional 
+    <ul style="font-family:Charter; color:Black; font-size: 18px;">
+    <li>
+    One of them suggests that population change can be explained by the changes in regional 
     krill biomass (which, as explained in the introduction section, is the major prey of Adélie penguin).
-    - The other suggests that long-term changes in sea ice affect population of Adélie penguin. 
+    </li>
+    <li>
+    The other suggests that long-term changes in sea ice affect population of Adélie penguin. 
     This proposal comes from the assumption that change of sea ice might tip the balance in favor of those 
     species who have looser requirements for affinities to sea ice.
+    </li>
+    </ul>
     </p> 
     </body>
     """
