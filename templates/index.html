@@ -16,10 +16,13 @@
       </a>
     </li>
     <li>
+      <a href="#" onclick="setURL('http://localhost:8501/?p=census')">1 - Census</a>
+    </li>
+    <li>
       <a href="#" onclick="setURL('http://localhost:8501/?p=reproduction')">Reproduction</a>
     </li>
     <li>
-      <a href="#" onclick="setURL('http://localhost:8501/?p=environment/ecosystem')">Environment/Ecosystem</a>
+      <a href="#" onclick="setURL('http://localhost:8501/?p=environment/ecosystem')">2 - Environment/Ecosystem</a>
     </li>
     <!-- <li>
       <a href="#" onclick="setURL('http://localhost:8501/?p=results')">Results</a>
@@ -27,6 +30,9 @@
     <li>
       <a href="#" onclick="setURL('http://localhost:8501/?p=examples')">Examples</a>
     </li> -->
+    <li>
+      <a href="#" onclick="setURL('http://localhost:8501/?p=examples')">Add here</a>
+    </li>
     <li>
       <a href="#" onclick="setURL('http://localhost:8501/?p=dataset')">Dataset</a>
     </li>
@@ -42,7 +48,6 @@
 <script>
   function setURL(url) {
     document.getElementById('streamlit_content').src = url;
-    console.log('Works!')
   }
 </script>
 

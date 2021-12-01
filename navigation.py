@@ -4,8 +4,12 @@ import streamlit as st
 from overview import overview
 from dataset import four_cs, dataset_description
 from environment_narrative import root
+<<<<<<< HEAD
 from reproduction import run_reproduction
 
+=======
+from census import census
+>>>>>>> 84e3f6b171db2dc2afe261ca292c251ad442fde3
 
 def _max_width(amount=2000):
   max_width_str = f"max-width: {amount}px;"
@@ -35,11 +39,10 @@ if navigation() == "home":
   _max_width()
   overview()
 
-elif navigation() == "dataset":
+elif navigation() == "census":
   _max_width(1200)
-  four_cs()
-  dataset_description()
-
+  census()
+  
 elif navigation() == "environment/ecosystem":
   _max_width(1200)
   root()
@@ -57,3 +60,11 @@ elif navigation() == "reproduction":
 #   st.title('Examples Menu')
 #   st.write('Select an example.')
 
+elif navigation() == "dataset":
+  _max_width(1200)
+  four_cs()
+  dataset_description()
+
+else:
+  _max_width()
+  st.write("Not a valid page. Please go to main page.")
