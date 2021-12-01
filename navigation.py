@@ -4,12 +4,8 @@ import streamlit as st
 from overview import overview
 from dataset import four_cs, dataset_description
 from environment_narrative import root
-<<<<<<< HEAD
 from reproduction import run_reproduction
-
-=======
 from census import census
->>>>>>> 84e3f6b171db2dc2afe261ca292c251ad442fde3
 
 def _max_width(amount=2000):
   max_width_str = f"max-width: {amount}px;"
