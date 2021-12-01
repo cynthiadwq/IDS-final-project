@@ -3,9 +3,87 @@ import altair as alt
 from altair import datum
 import pandas as pd
 import numpy as np
+from PIL import Image
 
 GRADIENT_COLOR_SCHEME = "redpurple"
 CATEGORY_COLOR_SCHEME = "category20"
+
+def study_island_intro():
+    palmer_icon = Image.open("images/palmer_icon.png")
+    tor_image = Image.open("images/tor_image.jpeg")
+    lit_image = Image.open("images/lit_image.jpeg")
+
+    tor_location = Image.open("images/tor_location.png")
+    hum_location = Image.open("images/hum_location.png")
+    chr_location = Image.open("images/chr_location.png")
+    lit_location = Image.open("images/lit_location.png")
+    cor_location = Image.open("images/cor_location.png")
+
+    intro, icon = st.columns((8, 2))
+    with intro:
+        st.write("To know deeper about Adelie Penguins, we will visualize and extract interesting information from \
+        the data provided by the Palmer Station. The Palmer Long-Term Ecological Research (LTER) study area is \
+        located to the west of the Antarctic Peninsula extending South and North of the Palmer Basin from onshore \
+        to several hundred kilometers off shore. Palmer Station is one of the three United States research stations \
+        located in Antarctica. Their datasets cover census, diet, chick status, etc., of Adelie Penguins (More \
+        details see Data page), and also many other fields, such as bacterial properties of Antarctic, seabird, etc. ")
+        st.write("""
+        If you are interested in the station or datasets, see links below:
+        - Palmer Station Website: https://pal.lternet.edu/ 
+        - Palmer Station Dataset: https://oceaninformatics.ucsd.edu/datazoo/catalogs/pallter/datasets
+        """)
+    with icon:
+        st.image(palmer_icon, "Palmer Station LTER")
+
+    st.write("Although Adelie penguins live across Antarctica continent and neighboring islands, we’ll use the datasets \
+    from the Palmer Station which focus on 5 islands instead. Below is a short introduction to these islands.")
+
+    st.subheader("Christine Island (CODE: CHR)")
+    l_chr, m_chr = st.columns((2, 8))
+    with l_chr:
+        st.image(chr_location, "Christine Island Location")
+    with m_chr:
+        st.metric(label="Coordinates", value="64°48′S 64°02′W")
+        st.write("Christine Island is an island 0.9 km (0.5 nmi) long which lies 1.9 km (1 nmi) off the south coast of Anvers Island and 2.8 km (1.5 nmi) southeast of Bonaparte Point.")
+
+    st.subheader("Torgersen Island (CODE: TOR)")
+    l_tor, m_tor, r_tor = st.columns((2, 6, 2))
+    with l_tor:
+        st.image(tor_location, "Torgersen Island Location")
+    with m_tor:
+        st.metric(label="Coordinates", value="64°46′S 64°5′W")
+        st.write("Torgersen Island is a small rocky island lying just east of Litchfield Island in the entrance to Arthur Harbour, off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.")
+    with r_tor:
+        st.image(tor_image, "Adelie penguins on Torgersen Island")
+
+    st.subheader("Cormorant Island (CODE: COR)")
+    l_cor, m_cor = st.columns((2, 8))
+    with l_cor:
+        st.image(cor_location, "Cormorant Island Location")
+    with m_cor:
+        st.metric(label="Coordinates", value="64°48′S 63°58′W")
+        st.write("Cormorant Island is a 10 ha island lying in Bismarck Strait 1 km south of Anvers Island, 4 km (2.5 mi) east-south-east of Bonaparte Point, in the Palmer Archipelago of Antarctica. It lies some 5 km to the south-east of the United States' Palmer Station in Arthur Harbour on Anvers Island.")
+
+    st.subheader("Humble Island (CODE: HUM)")
+    l_hum, m_hum = st.columns((2, 8))
+    with l_hum:
+        st.image(hum_location, "Humble Island Location")
+    with m_hum:
+        st.metric(label="Coordinates", value="64°46′S 64°06′W")
+        st.write("Humble Island is a small rocky island lying 0.74 km (0.4 nmi) south-east of Norsel Point on Amsler Island, off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.")
+
+    st.subheader("Litchfield Island (CODE: LIT)")
+    l_lit, m_lit, r_lit = st.columns((2, 6, 2))
+    with l_lit:
+        st.image(lit_location, "Litchfield Island Location")
+    with m_lit:
+        st.metric(label="Coordinates", value="64°46′S 64°06′W")
+        st.write("Litchfield Island is a rocky island 0.9 kilometres (0.5 nmi) long and rising to 50 m (164 ft), lying in Arthur Harbour, 0.9 kilometres (0.5 nmi) south of Norsel Point, off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.")
+        st.write("The island, together with its littoral zone, possesses an unusually high collection of marine and terrestrial life and is unique amongst the neighboring islands as a breeding place for six species of native birds. It provides an outstanding example of the natural ecological system of the Antarctic Peninsula area. In addition, Litchfield Island possesses rich growths of vegetation and has the most varied topography and the greatest diversity of terrestrial habitats of the islands in Arthur Harbour.")
+    with r_lit:
+        st.image(lit_image, "Litchfield island picture")
+
+    st.write("As we can see, these 5 islands are either adjacent to each other, or near to others. Therefore, in some of our data visualizations, we will view them as a whole.")
 
 def census_plot():
     st.write("Let's see the total adults count change on all islands (CHR: Christine, TOR: Torgersen, COR: Cormorant, HUM: Humble, LIT: Litchfield) over years. ")
@@ -70,6 +148,13 @@ def census_island_plot():
         st.altair_chart(bars, use_container_width=True)
 
 def population_arrival_plot():
+    st.write("We have seen the drastic change on the population of Adelie penguins over years. How about a \
+    more detailed look into the annual population arrival pattern of them? Due to data limitation, let's \
+    focus on Humble Island this time. But the study data will be sufficient for us to see an annual pattern \
+    for each year.")
+    st.write("Because of the activity pattern of Adelie penguins, study data is retrieved annually from October \
+    to next Feburary. As a result, we'll view the cycle of annual pattern as from October to next Feburary.")
+
     df = pd.read_csv("EDA/Adelie Penguin Population Arrival.csv")
     df["Date"] = pd.to_datetime(df["Date GMT"])
     count_date_data = df[["Adults", "Date GMT", "Date"]].groupby(["Date GMT", "Date"], as_index=False)["Adults"].sum()
@@ -126,6 +211,8 @@ def annual_population_arrival_plot():
     - Hover on a point on the lines to see its detailed information
     - Click the Start Year legend on the right to focus on a single year pattern
     - Click on the graph to cancel single highlighting
+
+    Hint: Try choose a range of years and then click on the start year legends on the right from the first year to the last year!
     """)
     values = st.slider('Select a range of years to display annual population arrival patterns for these years', 
         1991, 2017, (2001, 2007))
@@ -175,19 +262,15 @@ def annual_population_arrival_plot():
     st.altair_chart(lines, use_container_width=True)
 
 # main program starts here
-st.set_page_config(layout="wide")
-st.write("TODO: add transition story")
-st.header("How did the population change?")
-census_plot()
-census_island_plot()
+def census():
+    st.header("Brief Intro to Palmer Station and Dataset")
+    study_island_intro()
 
-st.markdown('---')
-st.header("How about the population arrival pattern change over years?")
-st.write("We have seen the drastic change on the population of Adelie penguins over years. How about a \
-    more detailed look into the annual population arrival pattern of them? Due to data limitation, let's \
-    focus on Humble Island this time. But the study data will be sufficient for us to see an annual pattern \
-    for each year.")
-st.write("Because of the activity pattern of Adelie penguins, study data is retrieved annually from October \
-    to next Feburary. As a result, we'll view the cycle of annual pattern as from October to next Feburary.")
-population_arrival_plot()
-annual_population_arrival_plot()
+    st.header("How did the population change?")
+    census_plot()
+    census_island_plot()
+
+    st.markdown('---')
+    st.header("How about the population arrival pattern change over years?")
+    population_arrival_plot()
+    annual_population_arrival_plot()
