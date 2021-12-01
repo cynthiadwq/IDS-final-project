@@ -154,6 +154,7 @@ def dataset_description():
     d4, unsafe_allow_html=True
   )
 
+  
   d5 = """
     <body style="font-family:Charter; color:Black; font-size: 15px;">
     <b style="font-size: 20px;">Adelie Penguin Chick Counts</b>
@@ -170,37 +171,45 @@ def dataset_description():
     d5, unsafe_allow_html=True
   )
 
-  d6 = """
-    <body style="font-family:Charter; color:Black; font-size: 15px;">
-    <b style="font-size: 20px;">Adelie Penguin Diet Composition (multiple datasets)</b>
-    <br>
-    This series of datasets record the amount (measured in weight and size) of major prey 
-    obtained from the diet samples of Adelie Penguin. 
-    This includes resuspension of the samples in fresh water to release fish otoliths, 
-    squid beaks and other prey hard parts, and then draining to a consistency 
-    that facilitates separating the diet samples into subsamples of prey components. 
-    Considering the completeness of the data, we mainly focus on analyzing E. superba, 
-    which is a primary prey of Adelie Penguin.
-    <br><br>
-    </body>
-  """
-  st.markdown(
-    d6, unsafe_allow_html=True
-  )
+  row6_1, row6_2 = st.columns((1, 2))
+  with row6_1:
+    attack_img = Image.open("images/adelie_attack_emperor.jpg")
+    width, height = attack_img.size 
+    # cropped_area = (0, 120, width, height - 50)
+    # cropped_img = sample_map_img.crop(cropped_area)
+    st.image(attack_img, "Penguin Attack!")
+  with row6_2:
+    d6 = """
+      <body style="font-family:Charter; color:Black; font-size: 15px;">
+      <b style="font-size: 20px;">Adelie Penguin Diet Composition (multiple datasets)</b>
+      <br>
+      This series of datasets record the amount (measured in weight and size) of major prey 
+      obtained from the diet samples of Adelie Penguin. 
+      This includes resuspension of the samples in fresh water to release fish otoliths, 
+      squid beaks and other prey hard parts, and then draining to a consistency 
+      that facilitates separating the diet samples into subsamples of prey components. 
+      Considering the completeness of the data, we mainly focus on analyzing E. superba, 
+      which is a primary prey of Adelie Penguin.
+      <br><br>
+      </body>
+    """
+    st.markdown(
+      d6, unsafe_allow_html=True
+    )
 
-  d7 = """
-    <body style="font-family:Charter; color:Black; font-size: 15px;">
-    <b style="font-size: 20px;">Annual Sea Ice</b>
-    <br> 
-    This dataset records the area of sea ice in the surrounding locations of Palmer station. 
-    The data is measured per year from 1979-2018 in the following locations: WAP, Pori, Pdsr, Pnew. 
-    The original data records the area of sea ice extent, sea ice and open water. All measured in km^2. 
-    <br><br>
-    </body>
-  """
-  st.markdown(
-    d7, unsafe_allow_html=True
-  )
+    d7 = """
+      <body style="font-family:Charter; color:Black; font-size: 15px;">
+      <b style="font-size: 20px;">Annual Sea Ice</b>
+      <br> 
+      This dataset records the area of sea ice in the surrounding locations of Palmer station. 
+      The data is measured per year from 1979-2018 in the following locations: WAP, Pori, Pdsr, Pnew. 
+      The original data records the area of sea ice extent, sea ice and open water. All measured in km^2. 
+      <br><br>
+      </body>
+    """
+    st.markdown(
+      d7, unsafe_allow_html=True
+    )
 
   row9_1, row9_2 = st.columns((2, 1))
   with row9_1: 
@@ -235,7 +244,7 @@ def dataset_description():
     )
   with row9_2:
     sample_map_img = Image.open("images/zooplankton_sample_map.png")
-    width, height = sample_map_img.size 
+    # width, height = sample_map_img.size 
     # cropped_area = (0, 120, width, height - 50)
     # cropped_img = sample_map_img.crop(cropped_area)
     st.image(sample_map_img, "Annual Zooplankton Sample Collection Sites")
