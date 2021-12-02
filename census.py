@@ -19,9 +19,19 @@ def study_island_intro():
     lit_location = Image.open("images/lit_location.png")
     cor_location = Image.open("images/cor_location.png")
 
+    intro = """
+    <b style="font-family:Charter; color:Black; font-size: 40px;">
+    <br>
+    Our approach: a look at Palmer Station, dataset and our Focus.
+    </b>
+    <br><br>
+    """
+    st.markdown(intro, unsafe_allow_html=True)
+
     intro, icon = st.columns((8, 2))
     with intro:
-        st.write("To know deeper about Adelie Penguins, we will visualize and extract interesting information from \
+        st.write("To look deeper into Adelie Penguin populations and other characteristics, we will \
+        visualize and extract interesting information from \
         the data provided by the Palmer Station. The Palmer Long-Term Ecological Research (LTER) study area is \
         located to the west of the Antarctic Peninsula extending South and North of the Palmer Basin from onshore \
         to several hundred kilometers off shore. Palmer Station is one of the three United States research stations \
@@ -263,9 +273,6 @@ def annual_population_arrival_plot():
 
 # main program starts here
 def census():
-    st.header("Brief Intro to Palmer Station and Dataset")
-    study_island_intro()
-
     st.header("How did the population change?")
     census_plot()
     census_island_plot()

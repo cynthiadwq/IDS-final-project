@@ -82,7 +82,7 @@ def overview():
   with row1_1:
     intro = """
     <b style="font-family:Charter; color:Black; font-size: 40px;">
-    Introduction
+    First, an introduction to Adélie penguins.
     </b>
     <br><br>
     """

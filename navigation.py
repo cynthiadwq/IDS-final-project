@@ -5,7 +5,7 @@ from overview import overview
 from dataset import four_cs, dataset_description
 from environment_narrative import root
 from reproduction import run_reproduction
-from census import census
+from census import census, study_island_intro
 
 def _max_width(amount=2000):
   max_width_str = f"max-width: {amount}px;"
@@ -34,6 +34,7 @@ def navigation():
 if navigation() == "home":
   _max_width()
   overview()
+  study_island_intro()
 
 elif navigation() == "census":
   _max_width(1200)
