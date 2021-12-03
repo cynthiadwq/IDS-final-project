@@ -42,6 +42,7 @@ def root():
     st.markdown(
         d, unsafe_allow_html=True
     )
+    st.markdown('---')
     # sea ice plot
     sea_ice_header = """
     <b style="font-family:Charter; color:Black; font-size: 30px;">
@@ -102,6 +103,7 @@ def root():
     st.markdown(
         d, unsafe_allow_html=True
     )
+    st.markdown('---')
     # zooplankton + diet plot
     diet_header = """
     <b style="font-family:Charter; color:Black; font-size: 30px;">
@@ -199,4 +201,24 @@ def root():
     """
     st.markdown(
         d, unsafe_allow_html=True
+    )
+
+    conclusion = """
+    <body style="font-family:Charter; color:Black; font-size: 18px;">
+    <p>
+    We can reach the following conclusions about environment/ecosystem factors:
+    <br>
+    The dramatic drop of prey amount in Palmer Station surroundings can be part of the reasons of the population change we 
+    describe in Census section. 
+    <br>
+    We don't see a clear correlation pattern between sea ice and Adélie penguin's population change. However, that doesn't necessarily
+    mean that sea ice area doesn't affect Adélie penguin's population. Because of the limit access to public sea ice 
+    dataset for Palmer station area , we cannot get other evidence (e.g. thickness, patterns of ice extent) about sea ice.
+    Thus, we cannot reach a conclusive statement here.  
+    </p>
+    </body>
+    """
+
+    st.markdown(
+        conclusion, unsafe_allow_html=True
     )

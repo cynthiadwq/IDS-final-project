@@ -281,3 +281,17 @@ def census():
     st.header("How about the population arrival pattern change over years?")
     population_arrival_plot()
     annual_population_arrival_plot()
+    # conclusion
+    conclusion = """
+        <body style="font-family:Charter; color:Black; font-size: 18px;">
+        <p>
+        In conclusion, we observed a drastic drop on Adélie penguin's population. In addition, the arrival rate of Adélie penguin
+        to Humble island drops as well over years. We are curious about the reason for such decrease. Thus, we'll explore 
+        multiple possible explanations in Reproduction and Environment/Ecosystem sections.
+        </p>
+        </body>
+        """
+
+    st.markdown(
+        conclusion, unsafe_allow_html=True
+    )
