@@ -96,7 +96,16 @@ def study_island_intro():
     st.write("As we can see, these 5 islands are either adjacent to each other, or near to others. Therefore, in some of our data visualizations, we will view them as a whole.")
 
 def census_plot():
-    st.write("Let's see the total adults count change on all islands (CHR: Christine, TOR: Torgersen, COR: Cormorant, HUM: Humble, LIT: Litchfield) over years. ")
+    instruction = """
+        <body style="font-family:Charter; color:Black; font-size: 18px;">
+        <p>
+            Let's see the total adults count change on all islands (CHR: Christine, TOR: Torgersen, COR: Cormorant, HUM: Humble, LIT: Litchfield) over years.
+        </p>
+        </body>
+        """
+    st.markdown(
+        instruction, unsafe_allow_html=True
+    )
 
     df = pd.read_csv("EDA/Adelie Penguin Census.csv")
     df["Date"] = pd.to_datetime(df["Date GMT"])
@@ -158,12 +167,23 @@ def census_island_plot():
         st.altair_chart(bars, use_container_width=True)
 
 def population_arrival_plot():
-    st.write("We have seen the drastic change on the population of Adelie penguins over years. How about a \
-    more detailed look into the annual population arrival pattern of them? Due to data limitation, let's \
-    focus on Humble Island this time. But the study data will be sufficient for us to see an annual pattern \
-    for each year.")
-    st.write("Because of the activity pattern of Adelie penguins, study data is retrieved annually from October \
-    to next Feburary. As a result, we'll view the cycle of annual pattern as from October to next Feburary.")
+    instruction = """
+        <body style="font-family:Charter; color:Black; font-size: 18px;">
+        <p>
+            We have seen the drastic change on the population of Adelie penguins over years. How about a \
+            more detailed look into the annual population arrival pattern of them? Due to data limitation, let's \
+            focus on Humble Island this time. But the study data will be sufficient for us to see an annual pattern \
+            for each year.
+        </p>
+        <p>
+            Because of the activity pattern of Adelie penguins, study data is retrieved annually from October \
+            to next Feburary. As a result, we'll view the cycle of annual pattern as from October to next Feburary.
+        </p>
+        </body>
+        """
+    st.markdown(
+        instruction, unsafe_allow_html=True
+    )
 
     df = pd.read_csv("EDA/Adelie Penguin Population Arrival.csv")
     df["Date"] = pd.to_datetime(df["Date GMT"])
@@ -213,8 +233,17 @@ def population_arrival_plot():
         )
 
 def annual_population_arrival_plot():
-    st.write("If we draw population arrival patterns for each year, and compare the annual patterns in a single \
-        graph, the variation will be more obvious.")
+    instruction = """
+        <body style="font-family:Charter; color:Black; font-size: 18px;">
+        <p>
+            If we draw population arrival patterns for each year, and compare the annual patterns in a single \
+            graph, the variation will be more obvious.
+        </p>
+        </body>
+        """
+    st.markdown(
+        instruction, unsafe_allow_html=True
+    )
     st.info("""
     Usage:
     - Change the year ranges to focus on certain annual patterns
@@ -273,14 +302,29 @@ def annual_population_arrival_plot():
 
 # main program starts here
 def census():
-    st.header("How did the population change?")
+    header1 = """
+    <b style="font-family:Charter; color:Black; font-size: 40px;">
+        How did the Adelie penguin's population change?
+    </b>
+    """
+    st.markdown(
+        header1, unsafe_allow_html=True
+    )
     census_plot()
     census_island_plot()
 
     st.markdown('---')
-    st.header("How about the population arrival pattern change over years?")
+    header2 = """
+    <b style="font-family:Charter; color:Black; font-size: 40px;">
+        How about their population arrival pattern change over years?
+    </b>
+    """
+    st.markdown(
+        header2, unsafe_allow_html=True
+    )
     population_arrival_plot()
     annual_population_arrival_plot()
+    
     # conclusion
     conclusion = """
         <body style="font-family:Charter; color:Black; font-size: 18px;">
