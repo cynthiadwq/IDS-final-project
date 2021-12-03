@@ -19,34 +19,54 @@ def study_island_intro():
     lit_location = Image.open("images/lit_location.png")
     cor_location = Image.open("images/cor_location.png")
 
-    intro = """
+    title = """
     <b style="font-family:Charter; color:Black; font-size: 40px;">
     <br>
     Our approach: a look at Palmer Station, dataset and our Focus.
     </b>
     <br><br>
     """
-    st.markdown(intro, unsafe_allow_html=True)
+    st.markdown(title, unsafe_allow_html=True)
 
     intro, icon = st.columns((8, 2))
     with intro:
-        st.write("To look deeper into Adelie Penguin populations and other characteristics, we will \
-        visualize and extract interesting information from \
-        the data provided by the Palmer Station. The Palmer Long-Term Ecological Research (LTER) study area is \
-        located to the west of the Antarctic Peninsula extending South and North of the Palmer Basin from onshore \
-        to several hundred kilometers off shore. Palmer Station is one of the three United States research stations \
-        located in Antarctica. Their datasets cover census, diet, chick status, etc., of Adelie Penguins (More \
-        details see Data page), and also many other fields, such as bacterial properties of Antarctic, seabird, etc. ")
-        st.write("""
-        If you are interested in the station or datasets, see links below:
-        - Palmer Station Website: https://pal.lternet.edu/ 
-        - Palmer Station Dataset: https://oceaninformatics.ucsd.edu/datazoo/catalogs/pallter/datasets
-        """)
+        introduction = """
+        <body style="font-family:Charter; color:Black; font-size: 18px;">
+            <p>
+                To look deeper into Adelie Penguin populations and other characteristics, we will \
+                visualize and extract interesting information from \
+                the data provided by the Palmer Station. The Palmer Long-Term Ecological Research (LTER) study area is \
+                located to the west of the Antarctic Peninsula extending South and North of the Palmer Basin from onshore \
+                to several hundred kilometers off shore. Palmer Station is one of the three United States research stations \
+                located in Antarctica. Their datasets cover census, diet, chick status, etc., of Adelie Penguins (More \
+                details see Data page), and also many other fields, such as bacterial properties of Antarctic, seabird, etc.
+            </p>
+            <p>
+                If you are interested in the station or datasets, see links below:
+                <ul>
+                    <li><a href="https://pal.lternet.edu/">Palmer Station Website </a></li>
+                    <li><a href="https://oceaninformatics.ucsd.edu/datazoo/catalogs/pallter/datasets"> Palmer Station Dataset </a></li>
+                </ul>
+            </p>
+        </body>
+        """
+        st.markdown(
+            introduction, unsafe_allow_html=True
+        )
     with icon:
         st.image(palmer_icon, "Palmer Station LTER")
 
-    st.write("Although Adelie penguins live across Antarctica continent and neighboring islands, we’ll use the datasets \
-    from the Palmer Station which focus on 5 islands instead. Below is a short introduction to these islands.")
+    instruction = """
+    <body style="font-family:Charter; color:Black; font-size: 18px; padding-top: 20px;">
+        <p>
+            Although Adelie penguins live across Antarctica continent and neighboring islands, we’ll use the datasets \
+            from the Palmer Station which focus on 5 islands instead. Below is a short introduction to these islands.
+        </p>
+    </body>
+    """
+    st.markdown(
+        instruction, unsafe_allow_html=True
+    )
 
     st.subheader("Christine Island (CODE: CHR)")
     l_chr, m_chr = st.columns((2, 8))
@@ -93,7 +113,19 @@ def study_island_intro():
     with r_lit:
         st.image(lit_image, "Litchfield island picture")
 
-    st.write("As we can see, these 5 islands are either adjacent to each other, or near to others. Therefore, in some of our data visualizations, we will view them as a whole.")
+    
+    instruction = """
+    <body style="font-family:Charter; color:Black; font-size: 20px; padding-top: 50px">
+        <p>
+            As we can see, these 5 islands are either adjacent to each other, or near to others. Therefore, we will view
+            them as a whole in some of our data visualizations on following pages.
+        </p>
+    </body>
+    """
+    st.markdown(
+        instruction, unsafe_allow_html=True
+    )
+    # st.write("As we can see, these 5 islands are either adjacent to each other, or near to others. Therefore, in some of our data visualizations, we will view them as a whole.")
 
 def census_plot():
     instruction = """
@@ -168,7 +200,7 @@ def census_island_plot():
 
 def population_arrival_plot():
     instruction = """
-        <body style="font-family:Charter; color:Black; font-size: 18px;">
+    <body style="font-family:Charter; color:Black; font-size: 18px;">
         <p>
             We have seen the drastic change on the population of Adelie penguins over years. How about a \
             more detailed look into the annual population arrival pattern of them? Due to data limitation, let's \
@@ -179,8 +211,8 @@ def population_arrival_plot():
             Because of the activity pattern of Adelie penguins, study data is retrieved annually from October \
             to next Feburary. As a result, we'll view the cycle of annual pattern as from October to next Feburary.
         </p>
-        </body>
-        """
+    </body>
+    """
     st.markdown(
         instruction, unsafe_allow_html=True
     )
@@ -234,16 +266,17 @@ def population_arrival_plot():
 
 def annual_population_arrival_plot():
     instruction = """
-        <body style="font-family:Charter; color:Black; font-size: 18px;">
+    <body style="font-family:Charter; color:Black; font-size: 18px;">
         <p>
             If we draw population arrival patterns for each year, and compare the annual patterns in a single \
             graph, the variation will be more obvious.
         </p>
-        </body>
-        """
+    </body>
+    """
     st.markdown(
         instruction, unsafe_allow_html=True
     )
+
     st.info("""
     Usage:
     - Change the year ranges to focus on certain annual patterns
@@ -324,17 +357,17 @@ def census():
     )
     population_arrival_plot()
     annual_population_arrival_plot()
-    
+
     # conclusion
     conclusion = """
-        <body style="font-family:Charter; color:Black; font-size: 18px;">
+    <body style="font-family:Charter; color:Black; font-size: 18px;">
         <p>
         In conclusion, we observed a drastic drop on Adélie penguin's population. In addition, the arrival rate of Adélie penguin
         to Humble island drops as well over years. We are curious about the reason for such decrease. Thus, we'll explore 
         multiple possible explanations in Reproduction and Environment/Ecosystem sections.
         </p>
-        </body>
-        """
+    </body>
+    """
 
     st.markdown(
         conclusion, unsafe_allow_html=True
