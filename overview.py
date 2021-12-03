@@ -178,7 +178,6 @@ def overview():
   with row3_4:
     salp = Image.open("images/salp.png")
     width, height = salp.size
-    print(width, height)
     cropped_area = (0, 30, width, height-30)
     cropped_img = salp.crop(cropped_area)
     st.image(cropped_img, "Salp")
