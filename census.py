@@ -33,12 +33,12 @@ def study_island_intro():
         introduction = """
         <body style="font-family:Charter; color:Black; font-size: 18px;">
             <p>
-                To look deeper into Adelie Penguin populations and other characteristics, we will \
+                To look deeper into Adélie Penguin populations and other characteristics, we will \
                 visualize and extract interesting information from \
                 the data provided by the Palmer Station. The Palmer Long-Term Ecological Research (LTER) study area is \
                 located to the west of the Antarctic Peninsula extending South and North of the Palmer Basin from onshore \
                 to several hundred kilometers off shore. Palmer Station is one of the three United States research stations \
-                located in Antarctica. Their datasets cover census, diet, chick status, etc., of Adelie Penguins (More \
+                located in Antarctica. Their datasets cover census, diet, chick status, etc., of Adélie Penguins (More \
                 details see Data page), and also many other fields, such as bacterial properties of Antarctic, seabird, etc.
             </p>
             <p>
@@ -59,7 +59,7 @@ def study_island_intro():
     instruction = """
     <body style="font-family:Charter; color:Black; font-size: 18px; padding-top: 20px;">
         <p>
-            Although Adelie penguins live across Antarctica continent and neighboring islands, we’ll use the datasets \
+            Although Adélie penguins live across Antarctica continent and neighboring islands, we’ll use the datasets \
             from the Palmer Station which focus on 5 islands instead. Below is a short introduction to these islands.
         </p>
     </body>
@@ -84,7 +84,7 @@ def study_island_intro():
         st.metric(label="Coordinates", value="64°46′S 64°5′W")
         st.write("Torgersen Island is a small rocky island lying just east of Litchfield Island in the entrance to Arthur Harbour, off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.")
     with r_tor:
-        st.image(tor_image, "Adelie penguins on Torgersen Island")
+        st.image(tor_image, "Adélie penguins on Torgersen Island")
 
     st.subheader("Cormorant Island (CODE: COR)")
     l_cor, m_cor = st.columns((2, 8))
@@ -144,7 +144,7 @@ def census_plot():
     df["Adults"] = 2 * df["Breeding Pairs"]
     df["Year"] = df["Date"].dt.year
     adult_count_year_data = df.groupby(df["Year"], as_index=False)["Adults"].sum()
-    bars = alt.Chart(adult_count_year_data, title="Adelie Penguin Population Change on 5 Islands Over Years").mark_bar().encode(
+    bars = alt.Chart(adult_count_year_data, title="Adélie Penguin Population Change on 5 Islands Over Years").mark_bar().encode(
         x='Year:Q',
         y="Adults:Q",
         color=alt.Color('Adults', scale=alt.Scale(scheme=GRADIENT_COLOR_SCHEME)),
@@ -175,7 +175,7 @@ def census_island_plot():
 
     options, plot = st.columns((3, 7))
     with options: 
-        genre = st.radio("Choose an island to see Adelie penguin's population change on this island from 1991 to 2017", ('CHR - Christine', 'TOR - Torgersen', 'COR - Cormorant', 'HUM - Humble', 'LIT - Litchfield'))
+        genre = st.radio("Choose an island to see Adélie penguin's population change on this island from 1991 to 2017", ('CHR - Christine', 'TOR - Torgersen', 'COR - Cormorant', 'HUM - Humble', 'LIT - Litchfield'))
         if genre == 'CHR - Christine':
             selected_df = chr_df
         elif genre == 'TOR - Torgersen':
@@ -190,7 +190,7 @@ def census_island_plot():
         st.info("Note: You can hover on bars to see the precise count number.")
 
     with plot:
-        bars = alt.Chart(selected_df, title="Adelie Penguin Population Change on Selected Island Over Years").mark_bar().encode(
+        bars = alt.Chart(selected_df, title="Adélie Penguin Population Change on Selected Island Over Years").mark_bar().encode(
             x='Date GMT',
             y=alt.Y("Adults:Q", scale=alt.Scale(domain=[0,6200])),
             color=alt.Color('Adults', scale=alt.Scale(scheme=GRADIENT_COLOR_SCHEME)),
@@ -202,13 +202,13 @@ def population_arrival_plot():
     instruction = """
     <body style="font-family:Charter; color:Black; font-size: 18px;">
         <p>
-            We have seen the drastic change on the population of Adelie penguins over years. How about a \
+            We have seen the drastic change on the population of Adélie penguins over years. How about a \
             more detailed look into the annual population arrival pattern of them? Due to data limitation, let's \
             focus on Humble Island this time. But the study data will be sufficient for us to see an annual pattern \
             for each year.
         </p>
         <p>
-            Because of the activity pattern of Adelie penguins, study data is retrieved annually from October \
+            Because of the activity pattern of Adélie penguins, study data is retrieved annually from October \
             to next Feburary. As a result, we'll view the cycle of annual pattern as from October to next Feburary.
         </p>
     </body>
@@ -234,7 +234,7 @@ def population_arrival_plot():
     with plot:
         x_init = pd.to_datetime(['2000-07-01', '2001-05-01']).view(int) / 1E6
         brush = alt.selection(type='interval', encodings=['x'], zoom=True, init={'x':list(x_init)})
-        bars_base = alt.Chart(count_date_data, title="Adelie Penguin Population Arrival").mark_bar().encode(
+        bars_base = alt.Chart(count_date_data, title="Adélie Penguin Population Arrival").mark_bar().encode(
             x = "Date GMT:T", 
             y = "Adults:Q",
             color=alt.Color('Adults', scale=alt.Scale(scheme=GRADIENT_COLOR_SCHEME)),
@@ -337,7 +337,7 @@ def annual_population_arrival_plot():
 def census():
     header1 = """
     <b style="font-family:Charter; color:Black; font-size: 40px;">
-        How did the Adelie penguin's population change?
+        How did the Adélie penguin's population change?
     </b>
     """
     st.markdown(
