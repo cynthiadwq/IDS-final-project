@@ -42,7 +42,7 @@ def four_cs():
       from environmental factors, diet, to reproductive success, and population change throughout years. 
       </li>
       <li>
-      <b style="font-size: 20px;">Correct</b>:
+      <b style="font-size: 20px;">Coherent</b>:
       Generally, the datasets we used are coherent. 
       All datetime information lies within the range of 1991 ~ 2019, 
       which aligns with the ongoing study time. The datasets also make sense relative to themselves 
@@ -51,7 +51,7 @@ def four_cs():
       and they only serve as special notes or remarks to specific rows that need special attention.
       </li>
       <li>
-      <b style="font-size: 20px;">Coherent</b>：
+      <b style="font-size: 20px;">Correct</b>
       We can rely on the data source to ensure its correctness. 
       The data are retrieved from Palmer Station, one of the three United States research stations located in Antarctica. 
       The study protocol briefly explains the method they are using to retrieve the data, 
