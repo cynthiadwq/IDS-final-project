@@ -48,15 +48,6 @@ elif navigation() == "reproduction":
   _max_width(1200)
   run_reproduction()
 
-# elif navigation() == "results":
-#   st.title('Results List')
-#   for item in range(25):
-#     st.write(f'Results {item}')
-
-# elif navigation() == "examples":
-#   st.title('Examples Menu')
-#   st.write('Select an example.')
-
 elif navigation() == "dataset":
   _max_width(1200)
   four_cs()

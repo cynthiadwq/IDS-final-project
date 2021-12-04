@@ -32,12 +32,12 @@ def four_cs():
       <ol style="font-family:Charter; color:Black; font-size: 18px;">
       <li>
       <b style="font-size: 20px;">Complete</b>:
-      The datasets are on Adelie penguins residing in 5 specific islands, 
+      The datasets are on Adélie penguins residing in 5 specific islands, 
       with some datasets having more samples collected on some island(s) over the others 
       (eg. Population Arrival dataset is solely about penguins on Humble island). 
       Additionally, we are missing data from 2003 for zooplankton sample data, 
       and we only have zooplankton data until 2004 inclusive. Other than that, 
-      the data we have cover the entire breeding season of Adelie penguins consistently every year for more than 20 years, 
+      the data we have cover the entire breeding season of Adélie penguins consistently every year for more than 20 years, 
       from 1992 to 2018, and the datasets cover many aspects that shed light on this penguin species 
       from environmental factors, diet, to reproductive success, and population change throughout years. 
       </li>
@@ -89,7 +89,7 @@ def dataset_description():
   d1 = """
     <body style="font-family:Charter; color:Black; font-size: 15px;">
     <br>
-    <b style="font-size: 20px;">Adelie Penguin Census</b>
+    <b style="font-size: 20px;">Adélie Penguin Census</b>
     <br>
     This dataset records the population of breeding pairs on 5 islands from 1991 to 2017. 
     5 islands are: Torgersen Island, Humble Island, Litchfield Island, Cormorant Island, and Christine Island. 
@@ -107,7 +107,7 @@ def dataset_description():
 
   d2 = """
     <body style="font-family:Charter; color:Black; font-size: 15px;">
-    <b style="font-size: 20px;">Adelie Penguin Population Arrival</b>
+    <b style="font-size: 20px;">Adélie Penguin Population Arrival</b>
     <br>
     This dataset records the breeding population arrival chronology on Humble Island from 1991 to 2017. 
     Explained by the abstract, “the arrival chronology of adult Adélie penguins on Humble Island is documented annually 
@@ -125,7 +125,7 @@ def dataset_description():
 
   d3 = """
     <body style="font-family:Charter; color:Black; font-size: 15px;">
-    <b style="font-size: 20px;">Adelie Penguin Chick Broods</b>
+    <b style="font-size: 20px;">Adélie Penguin Chick Broods</b>
     <br>
     This dataset records the nests information in five main islands on which the Adélie penguin colonies have historically occurred, 
     and typically during the first week of January when chicks are in the guard stage. 
@@ -140,7 +140,7 @@ def dataset_description():
 
   d4 = """
     <body style="font-family:Charter; color:Black; font-size: 15px;">
-    <b style="font-size: 20px;">Adelie Penguin Reproductive Success</b>
+    <b style="font-size: 20px;">Adélie Penguin Reproductive Success</b>
     <br>
     This dataset records information about a sample of Adélie penguin nests from colonies on Humble Island. 
     These samples are randomly selected annually and checked daily (or as ice and weather conditions permit) 
@@ -157,7 +157,7 @@ def dataset_description():
   
   d5 = """
     <body style="font-family:Charter; color:Black; font-size: 15px;">
-    <b style="font-size: 20px;">Adelie Penguin Chick Counts</b>
+    <b style="font-size: 20px;">Adélie Penguin Chick Counts</b>
     <br>
     This dataset records information on the total number of chicks produced on the five main islands 
     on which Adélie penguin colonies have historically occurred. 
@@ -181,15 +181,15 @@ def dataset_description():
   with row6_2:
     d6 = """
       <body style="font-family:Charter; color:Black; font-size: 15px;">
-      <b style="font-size: 20px;">Adelie Penguin Diet Composition (multiple datasets)</b>
+      <b style="font-size: 20px;">Adélie Penguin Diet Composition (multiple datasets)</b>
       <br>
       This series of datasets record the amount (measured in weight and size) of major prey 
-      obtained from the diet samples of Adelie Penguin. 
+      obtained from the diet samples of Adélie Penguin. 
       This includes resuspension of the samples in fresh water to release fish otoliths, 
       squid beaks and other prey hard parts, and then draining to a consistency 
       that facilitates separating the diet samples into subsamples of prey components. 
       Considering the completeness of the data, we mainly focus on analyzing E. superba, 
-      which is a primary prey of Adelie Penguin.
+      which is a primary prey of Adélie Penguin.
       <br><br>
       </body>
     """
@@ -215,9 +215,9 @@ def dataset_description():
   with row9_1: 
     d8 = """
       <body style="font-family:Charter; color:Black; font-size: 15px;">
-      <b style="font-size: 20px;">Adelie Sites</b>
+      <b style="font-size: 20px;">Adélie Sites</b>
       <br>
-      This dataset contains longitude, latitude, and island name of satellite sightings of Adelie Penguins all around Antarctica, 
+      This dataset contains longitude, latitude, and island name of satellite sightings of Adélie Penguins all around Antarctica, 
       manually marked by collaborating scientists on an open-source data platform. 
       The dataset includes locations of penguin sightings from 1980 to 2019 inclusive.
       <br><br>
@@ -233,7 +233,7 @@ def dataset_description():
       <br>
       This dataset contains calculated abundances for krill, salp and species of zooplankton per 1000 meter cubed, 
       from samples collected between 1993 and 2004 inclusive. Data was collected aboard cruises 
-      off the coast of the Western Antarctic Penninsula close to Adelie Penguin habitats (near Torgersen island), 
+      off the coast of the Western Antarctic Penninsula close to Adélie Penguin habitats (near Torgersen island), 
       along designated spots each year (radiating outwards from coastline, see image on the right). 
       There is an average of 57 samples collected each year except 2003. 
       The dataset contains study’s year, longitude and latitude of the sample collection location, and per species abundance. 

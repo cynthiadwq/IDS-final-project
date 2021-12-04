@@ -70,7 +70,7 @@ def overview():
   width, height = ice_float_image.size 
   cropped_area = (0, 200, width, height - 250)
   cropped_img = ice_float_image.crop(cropped_area)
-  st.image(cropped_img, "Adelie penguins congregating on an ice floe")
+  st.image(cropped_img, "Adélie penguins congregating on an ice floe")
   website_title = """
     <b style="font-family:Noe Display; color:Black; font-size: 55px;">
     Adélie Penguins on the Coast of West Antarctica
@@ -106,7 +106,7 @@ def overview():
       <br>
       The Adélie is the littlest species of penguin in the Antarctic.
       Adult Adélie penguins stand 70–73 cm (about 28–29 inches) tall and weigh 4–6 kg (about 9–13 pounds), 
-      the males being slightly taller and heavier than the females. Adelie fledgings weigh about 2.8-3.2kg.  
+      the males being slightly taller and heavier than the females. Adélie fledgings weigh about 2.8-3.2kg.  
       </p>
     """
     st.markdown(
