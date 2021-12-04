@@ -56,3 +56,16 @@ elif navigation() == "dataset":
 else:
   _max_width()
   st.write("Not a valid page. Please go to main page.")
+
+# footer
+def footer():
+  st.markdown("---")
+  footer="""
+    <p style="font-family:Charter; color:gray; font-size: 12px;">
+    Developed with ❤ by Crystal Jin (chenj), Wenqin Dong (wenqind), Jazlyn Li (zhixianl), Vanessa Yin (yuey4)
+    </p>
+    """
+  st.markdown(footer, unsafe_allow_html=True)
+
+
+footer()
