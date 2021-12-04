@@ -32,7 +32,7 @@ def navigation():
 
 
 if navigation() == "home":
-  _max_width()
+  _max_width(1200)
   overview()
   study_island_intro()
 

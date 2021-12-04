@@ -72,7 +72,7 @@ def overview():
   cropped_img = ice_float_image.crop(cropped_area)
   st.image(cropped_img, "Adelie penguins congregating on an ice floe")
   website_title = """
-    <b style="font-family:Noe Display; color:Black; font-size: 60px;">
+    <b style="font-family:Noe Display; color:Black; font-size: 55px;">
     Adélie Penguins on the Coast of West Antarctica
     </b>
     <br><br><br>

@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image
 
-GRADIENT_COLOR_SCHEME = "redpurple"
+GRADIENT_COLOR_SCHEME = "blues"
 CATEGORY_COLOR_SCHEME = "category20"
 
 def study_island_intro():
