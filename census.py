@@ -68,48 +68,141 @@ def study_island_intro():
         instruction, unsafe_allow_html=True
     )
 
-    st.subheader("Christine Island (CODE: CHR)")
+    header_chr = """
+    <b style="font-family:Charter; color:Black; font-size: 30px;">
+        Christine Island (CODE: CHR)
+    </b>
+    """
+    st.markdown(
+        header_chr, unsafe_allow_html=True
+    )
     l_chr, m_chr = st.columns((2, 8))
     with l_chr:
         st.image(chr_location, "Christine Island Location")
     with m_chr:
         st.metric(label="Coordinates", value="64°48′S 64°02′W")
-        st.write("Christine Island is an island 0.9 km (0.5 nmi) long which lies 1.9 km (1 nmi) off the south coast of Anvers Island and 2.8 km (1.5 nmi) southeast of Bonaparte Point.")
+        text = """
+        <body style="font-family:Charter; color:Black; font-size: 18px; padding-top: 20px;">
+            <p>
+                Christine Island is an island 0.9 km (0.5 nmi) long which lies 1.9 km (1 nmi) off the south coast of
+                Anvers Island and 2.8 km (1.5 nmi) southeast of Bonaparte Point.
+            </p>
+        </body>
+        """
+        st.markdown(
+            text, unsafe_allow_html=True
+        )
 
-    st.subheader("Torgersen Island (CODE: TOR)")
+    header_tor = """
+    <b style="font-family:Charter; color:Black; font-size: 30px;">
+        Torgersen Island (CODE: TOR)
+    </b>
+    """
+    st.markdown(
+        header_tor, unsafe_allow_html=True
+    )
     l_tor, m_tor, r_tor = st.columns((2, 6, 2))
     with l_tor:
         st.image(tor_location, "Torgersen Island Location")
     with m_tor:
         st.metric(label="Coordinates", value="64°46′S 64°5′W")
-        st.write("Torgersen Island is a small rocky island lying just east of Litchfield Island in the entrance to Arthur Harbour, off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.")
+        text = """
+        <body style="font-family:Charter; color:Black; font-size: 18px; padding-top: 20px;">
+            <p>
+                Torgersen Island is a small rocky island lying just east of Litchfield Island in the entrance 
+                to Arthur Harbour, off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.
+            </p>
+        </body>
+        """
+        st.markdown(
+            text, unsafe_allow_html=True
+        )
     with r_tor:
         st.image(tor_image, "Adélie penguins on Torgersen Island")
 
-    st.subheader("Cormorant Island (CODE: COR)")
+    header_cor = """
+    <b style="font-family:Charter; color:Black; font-size: 30px;">
+        Cormorant Island (CODE: COR)
+    </b>
+    """
+    st.markdown(
+        header_cor, unsafe_allow_html=True
+    )
     l_cor, m_cor = st.columns((2, 8))
     with l_cor:
         st.image(cor_location, "Cormorant Island Location")
     with m_cor:
         st.metric(label="Coordinates", value="64°48′S 63°58′W")
-        st.write("Cormorant Island is a 10 ha island lying in Bismarck Strait 1 km south of Anvers Island, 4 km (2.5 mi) east-south-east of Bonaparte Point, in the Palmer Archipelago of Antarctica. It lies some 5 km to the south-east of the United States' Palmer Station in Arthur Harbour on Anvers Island.")
+        text = """
+        <body style="font-family:Charter; color:Black; font-size: 18px; padding-top: 20px;">
+            <p>
+                Cormorant Island is a 10 ha island lying in Bismarck Strait 1 km south of Anvers Island, 4 km (2.5 mi) 
+                east-south-east of Bonaparte Point, in the Palmer Archipelago of Antarctica. It lies some 5 km to the 
+                south-east of the United States' Palmer Station in Arthur Harbour on Anvers Island.
+            </p>
+        </body>
+        """
+        st.markdown(
+            text, unsafe_allow_html=True
+        )
 
-    st.subheader("Humble Island (CODE: HUM)")
+    header_hum = """
+    <b style="font-family:Charter; color:Black; font-size: 30px;">
+        Humble Island (CODE: HUM)
+    </b>
+    """
+    st.markdown(
+        header_hum, unsafe_allow_html=True
+    )
     l_hum, m_hum = st.columns((2, 8))
     with l_hum:
         st.image(hum_location, "Humble Island Location")
     with m_hum:
         st.metric(label="Coordinates", value="64°46′S 64°06′W")
-        st.write("Humble Island is a small rocky island lying 0.74 km (0.4 nmi) south-east of Norsel Point on Amsler Island, off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.")
+        text = """
+        <body style="font-family:Charter; color:Black; font-size: 18px; padding-top: 20px;">
+            <p>
+                Humble Island is a small rocky island lying 0.74 km (0.4 nmi) south-east of Norsel Point on Amsler Island, 
+                off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.
+            </p>
+        </body>
+        """
+        st.markdown(
+            text, unsafe_allow_html=True
+        )
 
-    st.subheader("Litchfield Island (CODE: LIT)")
+    header_lit = """
+    <b style="font-family:Charter; color:Black; font-size: 30px;">
+        Litchfield Island (CODE: LIT)
+    </b>
+    """
+    st.markdown(
+        header_lit, unsafe_allow_html=True
+    )
     l_lit, m_lit, r_lit = st.columns((2, 6, 2))
     with l_lit:
         st.image(lit_location, "Litchfield Island Location")
     with m_lit:
         st.metric(label="Coordinates", value="64°46′S 64°06′W")
-        st.write("Litchfield Island is a rocky island 0.9 kilometres (0.5 nmi) long and rising to 50 m (164 ft), lying in Arthur Harbour, 0.9 kilometres (0.5 nmi) south of Norsel Point, off the south-west coast of Anvers Island in the Palmer Archipelago of Antarctica.")
-        st.write("The island, together with its littoral zone, possesses an unusually high collection of marine and terrestrial life and is unique amongst the neighboring islands as a breeding place for six species of native birds. It provides an outstanding example of the natural ecological system of the Antarctic Peninsula area. In addition, Litchfield Island possesses rich growths of vegetation and has the most varied topography and the greatest diversity of terrestrial habitats of the islands in Arthur Harbour.")
+        text = """
+        <body style="font-family:Charter; color:Black; font-size: 18px; padding-top: 20px;">
+            <p>
+                Litchfield Island is a rocky island 0.9 kilometres (0.5 nmi) long and rising to 50 m (164 ft), lying in 
+                Arthur Harbour, 0.9 kilometres (0.5 nmi) south of Norsel Point, off the south-west coast of Anvers Island 
+                in the Palmer Archipelago of Antarctica.
+            </p>
+            <p>
+                The island, together with its littoral zone, possesses an unusually high collection of marine and terrestrial 
+                life and is unique amongst the neighboring islands as a breeding place for six species of native birds. It 
+                provides an outstanding example of the natural ecological system of the Antarctic Peninsula area. In addition, 
+                Litchfield Island possesses rich growths of vegetation and has the most varied topography and the greatest 
+                diversity of terrestrial habitats of the islands in Arthur Harbour.
+            </p>
+        </body>
+        """
+        st.markdown(
+            text, unsafe_allow_html=True
+        )
     with r_lit:
         st.image(lit_image, "Litchfield island picture")
 
