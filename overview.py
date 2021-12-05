@@ -4,7 +4,6 @@ import streamlit as st
 import altair as alt
 from PIL import Image
 import pandas as pd
-import numpy as np
 
 # SETTING PAGE CONFIG TO WIDE MODE
 # st.set_page_config(layout="wide")

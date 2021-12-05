@@ -1,19 +1,9 @@
 from __future__ import annotations
-from os import truncate
-
-from numpy.lib.npyio import load
 
 import streamlit as st
 import altair as alt
-from vega_datasets import data
-
-import math
-import datetime
 import pandas as pd
-import numpy as np
-import geopandas as gpd
 import pydeck as pdk
-from pydeck.types import String
 
 ########### Utils ###########
 @st.cache(persist=True)
